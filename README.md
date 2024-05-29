@@ -74,9 +74,9 @@ Coloque código do prompt de comnando se for necessário
 
 A cada atualização os detalhes devem ser lançados aqui.
 
-* 0.2.1 - 25/01/2022
+* 0.2.1 - 29/05/2024
     * MUDANÇA: Atualização de docs (código do módulo permanece inalterado)
-* 0.2.0 - 15/01/2022
+* 0.2.0 - 04/04/2024
     * MUDANÇA: Remove `setDefaultXYZ()`
     * ADD: Adiciona `init()`
 * 0.1.1 - 11/01/2022
