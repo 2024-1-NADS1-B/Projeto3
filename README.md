@@ -24,7 +24,6 @@ O Medbox é uma caixa inteligente composta por seções de gavetas, cada uma equ
 |<br>
 |-->documentos<br>
   &emsp;|-->antigos<br>
-  &emsp;
 |-->imagens<br>
   |-->Medbox (1).jpg
 |-->src<br>
