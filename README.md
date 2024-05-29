@@ -99,7 +99,7 @@ A cada atualização os detalhes devem ser lançados aqui.
     Execução de códigos
 * 0.0.2 - 25/04/2024
     Apresentação do projeto
-* 0.0.0 - 04/04/2024
+* 0.0.1 - 04/04/2024
     Planejamento do projeto
     Compra de materiais
     Criação de códigos
