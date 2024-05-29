@@ -51,7 +51,12 @@ Verifique o código e faça o upload para o Arduino.
 Observe a execução do código no Arduino.
 ## 💻 Configuração para Desenvolvimento
 
+Para desenvolvimento utilize o Arduino IDE 1.8.0, linguagem C++ e as seguintes bibliotecas:
 
+
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <BlynkSimpleEsp32.h>
 
 ## 🗃 Histórico de lançamentos
 
