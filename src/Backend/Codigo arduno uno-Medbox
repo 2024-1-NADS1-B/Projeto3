@@ -1,0 +1,160 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+#include <RTClib.h>
+#include <myPushButton.h>
+
+// Definições de pinos
+#define pinLed1 9
+#define pinLed2 6
+#define pinBuz 11
+#define pinBot1 7
+#define pinBot2 8
+
+// Definições dos intervalos de tempo (dias, horas, minutos, segundos)
+#define Intervalo1 0,0,0,15 // Exemplo: a cada 12 segundos (ajustar para testar)
+#define Intervalo2 0,0,0,30  // Exemplo: a cada 8 segundos (ajustar para testar)
+
+// Configuração do display LCD (16 colunas, 2 linhas) no endereço 0x27
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+// Instanciando objetos
+RTC_DS1307 rtc;
+myPushButton gaveta1(pinBot1);
+myPushButton gaveta2(pinBot2);
+
+// Declaração de variáveis
+DateTime horarioAtual;
+DateTime horaRemedio1;
+DateTime horaRemedio2;
+unsigned long ultimaAtualizacao;
+bool taNaHora1 = false;
+bool taNaHora2 = false;
+
+// Função para ativar a sirene
+void sirene(int pin = pinBuz, int temp = 10, int esp = 200);
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(pinLed1, OUTPUT);
+  pinMode(pinLed2, OUTPUT);
+  pinMode(pinBuz, OUTPUT);
+
+  // Inicializar o display LCD
+  lcd.init();
+  lcd.backlight();
+
+  // Inicializar o RTC
+  if (!rtc.begin()) {
+    lcd.print("RTC nao encontrado");
+    while (1);
+  }
+
+  if (!rtc.isrunning()) {
+    Serial.println("Ajustando o horario");
+    // Definir o horário manualmente
+    rtc.adjust(DateTime(2024, 5, 24, 21, 0, 0));  // Ajusta o horário para 24 de Maio de 2024, 21:00:00
+  }
+
+  Serial.println("Fim do Setup");
+  Serial.println("Para ajustar o horário do RTC, use o formato: AAAA MM DD HH MM SS");
+
+  // Definir os tempos iniciais para os lembretes
+  horaRemedio1 = rtc.now() + TimeSpan(Intervalo1);
+  horaRemedio2 = rtc.now() + TimeSpan(Intervalo2);
+}
+
+void loop() {
+  gaveta1.lerBotao();
+  gaveta2.lerBotao();
+
+  // Verifica se há dados disponíveis no monitor serial para ajustar o horário
+  if (Serial.available()) {
+    String input = Serial.readStringUntil('\n');
+    input.trim(); // Remove espaços em branco
+    if (input.length() == 19) { // Formato AAAA MM DD HH MM SS
+      int ano = input.substring(0, 4).toInt();
+      int mes = input.substring(5, 7).toInt();
+      int dia = input.substring(8, 10).toInt();
+      int hora = input.substring(11, 13).toInt();
+      int minuto = input.substring(14, 16).toInt();
+      int segundo = input.substring(17, 19).toInt();
+
+      rtc.adjust(DateTime(ano, mes, dia, hora, minuto, segundo));
+      Serial.println("Horario ajustado.");
+    } else {
+      Serial.println("Formato invalido. Use: AAAA MM DD HH MM SS");
+    }
+  }
+
+  if (millis() - ultimaAtualizacao > 1000) {
+    horarioAtual = rtc.now();
+    taNaHora1 = horarioAtual >= horaRemedio1;
+    taNaHora2 = horarioAtual >= horaRemedio2;
+    ultimaAtualizacao = millis();
+
+    // Atualizar o LCD com o horário atual
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print(horarioAtual.day());
+    lcd.print('/');
+    lcd.print(horarioAtual.month());
+    lcd.print('/');
+    lcd.print(horarioAtual.year());
+    lcd.setCursor(0, 1);
+    lcd.print(horarioAtual.hour());
+    lcd.print(':');
+    lcd.print(horarioAtual.minute());
+    lcd.print(':');
+    lcd.print(horarioAtual.second());
+  }
+
+  if (taNaHora1 || taNaHora2) {
+    if (millis() % 950 == 0)
+      tone(pinBuz, 524, 50);
+  }
+
+  if (gaveta1.released()) {
+    if (taNaHora1) {
+      // Gaveta 1 aberta no horário correto
+      horaRemedio1 = rtc.now() + TimeSpan(Intervalo1);
+      taNaHora1 = false;
+      noTone(pinBuz);
+    } else {
+      // Gaveta 1 aberta fora do horário
+      sirene(pinBuz);
+    }
+  }
+
+  if (gaveta2.released()) {
+    if (taNaHora2) {
+      // Gaveta 2 aberta no horário correto
+      horaRemedio2 = rtc.now() + TimeSpan(Intervalo2);
+      taNaHora2 = false;
+      noTone(pinBuz);
+    } else {
+      // Gaveta 2 aberta fora do horário
+      sirene(pinBuz);
+    }
+  }
+
+  digitalWrite(pinLed1, taNaHora1);
+  digitalWrite(pinLed2, taNaHora2);
+}
+
+// Função para ativar a sirene de forma intensificada
+void sirene(int pin, int temp, int esp) {
+  for (int i = 1600; i >= 600; i--) {
+    tone(pin, i, temp);
+    delayMicroseconds(esp);
+  }
+  delay(50);
+  for (int i = 1300; i >= 300; i--) {
+    tone(pin, i, temp);
+    delayMicroseconds(esp);
+  }
+  delay(50);
+  for (int i = 1000; i >= 50; i--) {
+    tone(pin, i, temp);
+    delayMicroseconds(esp);
+  }
+}
