@@ -59,6 +59,7 @@ Encontre o index.html na pasta executáveis e execute-o como uma página WEB (at
 
 Smartphone
 
+
 Para abrir este projeto você necessita das seguintes ferramentas:
 
 -<a href="https://godotengine.org/download">GODOT</a>
