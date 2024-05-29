@@ -29,7 +29,7 @@ O Medbox é uma caixa inteligente composta por seções de gavetas, cada uma equ
   |-->Medbox (1).jpg
   
 |-->src<br>
-  &emsp;|-->Frontend<br>
+  &emsp;|-->Backend<br>
   &emsp;|-->Codigo ESP32-Medbox<br>
   &emsp;|-->Codigo arduino uno-Medbox
   
