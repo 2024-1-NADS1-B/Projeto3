@@ -21,7 +21,7 @@ O Medbox é uma caixa inteligente composta por seções de gavetas, cada uma equ
 ## 🛠 Estrutura de pastas
 
 -Raiz<br>
-|<br>
+
 |-->documentos<br>
   &emsp;|-->Medbox.pdf
   
