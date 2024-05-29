@@ -75,17 +75,6 @@ Configure o Horário para cada gaveta.
 Verifique o código e faça o upload para o Arduino. 
 Observe a execução do código no Arduino.
 
-
-Para abrir este projeto você necessita das seguintes ferramentas:
-
--<a href="https://godotengine.org/download">GODOT</a>
-
-```sh
-make install
-npm test
-Coloque código do prompt de comnando se for necessário
-```
-
 ## 🗃 Histórico de lançamentos
 
 A cada atualização os detalhes devem ser lançados aqui.
