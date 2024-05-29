@@ -95,7 +95,9 @@ Medbox by FECAP, Adriano XU, Bruna Farias , Deborah Pavanelli is licensed under 
 ## 🎓 Referências
 
 https://www.youtube.com/watch?v=wljjjGLW29A
+
 https://examples.blynk.cc/?board=ESP32&shield=ESP32%20WiFi&example=GettingStarted%2FBlynkBlink
+
 https://www.youtube.com/watch?v=DZoFp4sguh8
 
 
