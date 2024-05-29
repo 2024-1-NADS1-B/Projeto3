@@ -59,6 +59,22 @@ Encontre o index.html na pasta executáveis e execute-o como uma página WEB (at
 
 Smartphone
 
+Baixe o aplicativo Blynk. 
+Abra o projeto no Blynk e copie o Token de Autenticação. 
+Configure os widgets desejados. 
+Insira o Token de Autenticação no código do dispositivo.
+Carregue o código no dispositivo e inicie o projeto no Blynk.
+
+Computador
+
+Baixe e instale a IDE do Arduino no computador. 
+Conecte o Arduino ao computador via USB. 
+Escreva o código no IDE do Arduino. 
+Configure o horário do display.
+Configure o Horário para cada gaveta.
+Verifique o código e faça o upload para o Arduino. 
+Observe a execução do código no Arduino.
+
 
 Para abrir este projeto você necessita das seguintes ferramentas:
 
