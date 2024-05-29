@@ -1,0 +1,38 @@
+#define BLYNK_TEMPLATE_ID           "ID do Template Blynk"
+#define BLYNK_TEMPLATE_NAME         "Nome do Template"
+#define BLYNK_AUTH_TOKEN            "Seu Token de Autenticação Blynk"
+#define PIN_SENSOR_PRESENCA         2  // Defina o pino onde o sensor de presença está conectado
+
+#define WIFI_SSID                   "Nome da sua rede WiFi"
+#define WIFI_PASS                   "Senha da sua rede WiFi"
+
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <BlynkSimpleEsp32.h>
+
+bool presencaAnterior = false;
+
+void setup() {
+  Serial.begin(115200);
+  Blynk.begin(BLYNK_AUTH_TOKEN, WIFI_SSID, WIFI_PASS);
+}
+
+void loop() {
+  Blynk.run();
+  detectarPresenca();
+}
+
+void detectarPresenca() {
+  bool presencaAtual = digitalRead(PIN_SENSOR_PRESENCA);
+  
+  if (presencaAtual != presencaAnterior) {
+    if (presencaAtual) {
+      Serial.println("Presença detectada!");
+      Blynk.notify("Presença detectada!");  // Envia uma notificação para o aplicativo Blynk
+    } else {
+      Serial.println("Nenhuma presença detectada.");
+    }
+    presencaAnterior = presencaAtual;
+  }
+  delay(100);  // Adicione um pequeno atraso para evitar leituras erráticas do sensor
+}
