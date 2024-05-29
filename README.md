@@ -58,12 +58,12 @@ Observe a execução do código no Arduino.
 
 Para desenvolvimento utilize o Arduino IDE 1.8.0, linguagem C++ e as seguintes bibliotecas:
 
-#include <WiFi.h>
-#include <WiFiClient.h>
-#include <BlynkSimpleEsp32.h>
-#include <Wire.h>
-#include <LiquidCrystal_I2C.h>
-#include <RTClib.h>
+#include <WiFi.h><br>
+#include <WiFiClient.h><br>
+#include <BlynkSimpleEsp32.h><br>
+#include <Wire.h><br>
+#include <LiquidCrystal_I2C.h><br>
+#include <RTClib.h><br>
 #include <myPushButton.h>
 
 ## 🗃 Histórico de lançamentos
