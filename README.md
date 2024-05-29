@@ -24,14 +24,10 @@ O Medbox é uma caixa inteligente composta por seções de gavetas, cada uma equ
 |<br>
 |-->documentos<br>
   &emsp;|-->antigos<br>
-  &emsp;|Documentação.docx<br>
-|-->executáveis<br>
-  &emsp;|-->windows<br>
-  &emsp;|-->android<br>
-  &emsp;|-->HTML<br>
+  &emsp;
 |-->imagens<br>
+  |-->Medbox (1).jpg
 |-->src<br>
-  &emsp;|-->Backend<br>
   &emsp;|-->Frontend<br>
 |readme.md<br>
 
