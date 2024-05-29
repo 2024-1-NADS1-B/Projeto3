@@ -74,16 +74,16 @@ Coloque código do prompt de comnando se for necessário
 
 A cada atualização os detalhes devem ser lançados aqui.
 
-* 0.2.1 - 29/05/2024
+* 0.0.5- 29/05/2024
     Atualização de docs (código do módulo permanece inalterado)
-* 0.0.1 - 25/05/2024
+* 0.0.4 - 25/05/2024
     Apresentalçao do projeto
-* 0.1.0 - 22/05/2024
+* 0.0.3 - 22/05/2024
     Montagem do projeto
     Execução de códigos
-* 0.1.1 - 25/04/2024
+* 0.0.2 - 25/04/2024
     Apresentação do projeto
-* 0.2.0 - 04/04/2024
+* 0.0.0 - 04/04/2024
     Planejamento do projeto
     Compra de materiais
     Criação de códigos
