@@ -75,17 +75,19 @@ Coloque código do prompt de comnando se for necessário
 A cada atualização os detalhes devem ser lançados aqui.
 
 * 0.2.1 - 29/05/2024
-    * MUDANÇA: Atualização de docs (código do módulo permanece inalterado)
+    Atualização de docs (código do módulo permanece inalterado)
+* 0.0.1 - 25/05/2024
+    Apresentalçao do projeto
+* 0.1.0 - 22/05/2024
+    Montagem do projeto
+    Execução de códigos
+* 0.1.1 - 25/04/2024
+    Apresentação do projeto
 * 0.2.0 - 04/04/2024
-    * MUDANÇA: Remove `setDefaultXYZ()`
-    * ADD: Adiciona `init()`
-* 0.1.1 - 11/01/2022
-    * CONSERTADO: Crash quando chama `baz()` (Obrigado @NomeDoContribuidorGeneroso!)
-* 0.1.0 - 10/01/2022
-    * O primeiro lançamento adequado
-    * MUDANÇA: Renomeia `foo()` para `bar()`
-* 0.0.1 - 01/01/2022
-    * Trabalho em andamento
+    Planejamento do projeto
+    Compra de materiais
+    Criação de códigos
+
 
 ## 📋 Licença/License
 
