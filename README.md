@@ -13,7 +13,7 @@
 ## Professores Orientadores: Rodnil da Silva
 
 ## Descrição:
-![Medbox (1)](https://github.com/2024-1-NADS1-B/Projeto3/assets/171097024/81a85ccd-cec5-4137-ae52-c1edec48056a)
+        ![Medbox (1)](https://github.com/2024-1-NADS1-B/Projeto3/assets/171097024/81a85ccd-cec5-4137-ae52-c1edec48056a)
 
 O Medbox é uma caixa inteligente composta por seções de gavetas, cada uma equipada com um LED, um módulo sensor magnético e um display de relógio, todos conectados ao Arduino Uno. Um módulo RTC é utilizado para atualizar o horário do display e programar os horários de abertura de cada gaveta. Quando chega o horário programado para cada gaveta, um buzzer emite um som de notificação e o LED da gaveta correspondente acende. Se a gaveta errada for aberta, o som do buzzer aumenta, mas ao abrir a gaveta correta, o LED e o som do buzzer param. Além disso, um ESP32 com sensor de presença dentro da caixa detecta a presença de medicamentos e suas quantidades, conectando-se ao sistema Blynk para monitoramento remoto.
 
