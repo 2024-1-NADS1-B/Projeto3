@@ -10,9 +10,9 @@
 
 ## Integrantes:Adriano Xu ,Bruna Farias , Déborah Pavanelli
 
-## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Von Doom</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Saitama</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Strange</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Yoda</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Gero</a>
+## Professores Orientadores: Rodnil da Silva
 
-## Descrição
+## Descrição:O Medbox é uma caixa inteligente composta por seções de gavetas, cada uma equipada com um LED, um módulo sensor magnético e um display de relógio, todos conectados ao Arduino Uno. Um módulo RTC é utilizado para atualizar o horário do display e programar os horários de abertura de cada gaveta. Quando chega o horário programado para cada gaveta, um buzzer emite um som de notificação e o LED da gaveta correspondente acende. Se a gaveta errada for aberta, o som do buzzer aumenta, mas ao abrir a gaveta correta, o LED e o som do buzzer param. Além disso, um ESP32 com sensor de presença dentro da caixa detecta a presença de medicamentos e suas quantidades, conectando-se ao sistema Blynk para monitoramento remoto.
 
 <p align="center">
 <img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="NOME DO JOGO" border="0">
